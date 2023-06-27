@@ -1,24 +1,21 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
-    <input v-model="inputValue" type="text">
+    <h1>{{ store.count }}</h1>
+    <button @click="increment">Increment</button>
+    <button @click="decrement">Decrement</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch, watchEffect } from 'vue';
+import { useCounterStore } from '@/stores/counter'
 
-const inputValue = ref('');
-const message = ref('');
+const store = useCounterStore()
 
-// 使用 watchEffect 创建副作用函数
-watchEffect(() => {
-  message.value = `你输入了：${inputValue.value}`;
-  console.log('watchEffect', inputValue.value);
-});
+function increment() {
+  store.increment()
+}
 
-// 使用 watch 创建侦听器
-watch(inputValue, (newValue, oldValue) => {
-  console.log('watch', newValue, oldValue);
-});
+function decrement() {
+  store.decrement()
+}
 </script>
