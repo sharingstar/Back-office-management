@@ -1,0 +1,84 @@
+<template>
+  <div class="container-fluid w-75 mx-auto pt-5">
+  <h1 class="mb-4 text-center text-danger">任务列表案例</h1>
+  <div class="row align-items-center">
+    <!-- 全选 -->
+    <div class="col-auto">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="allCheck"
+        />
+        <label class="form-check-label" for="allCheck"> 全选 </label>
+      </div>
+    </div>
+
+    <!-- 输入待办 -->
+    <div class="col">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="请输入待办事项，按回车添加"
+        aria-label="todo input"
+      />
+    </div>
+  </div>
+
+  <ul class="list-group mt-4">
+    <li class="list-group-item d-flex justify-content-between">
+      <div class="form-check d-inline-block">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+        />
+        <!-- 是否完成的checkbox -->
+        <label
+          class="form-check-label text-decoration-line-through"
+          for="flexCheckDefault"
+          >An item</label
+        >
+      </div>
+
+      <button class="btn-close"></button>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <div class="form-check d-inline-block">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+        />
+        <!-- 是否完成的checkbox -->
+        <label
+          class="form-check-label"
+          for="flexCheckDefault"
+          >An item</label
+        >
+      </div>
+
+      <button class="btn-close"></button>
+    </li>
+  </ul>
+
+  <div class="d-flex mt-2 justify-content-between align-items-center">
+    <span>剩余0个</span>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <button class="nav-link active">全部</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link">未完成</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link">已完成</button>
+      </li>
+    </ul>
+
+    <button type="button" class="btn btn-danger">清除已完成</button>
+  </div>
+</div>
+</template>
